@@ -1,4 +1,7 @@
 # nodebb-plugin-DPlayer
 
 ## Installation
-`npm install nodebb-plugin-DPlayer`
+`npm install nodebb-plugin-dplayer`
+
+## To use
+`!(video address)`

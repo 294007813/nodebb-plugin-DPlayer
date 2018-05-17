@@ -1,5 +1,5 @@
 {
-  "name": "nodebb-plugin-DPlayer",
+  "name": "nodebb-plugin-dplayer",
   "version": "0.0.1",
   "description": "A NodeBB plugin to html5 video player",
   "main": "library.js",
