@@ -18,7 +18,7 @@ const VideoExtendedMarkdown = {
 	},
 	registerFormating(payload, callback) {
 		const formating = [
-			{name: "video", className: "fa fa-video-camera", title: "[[extendedmarkdown:composer.formatting.video]]"},
+			{name: "video", className: "fa fa-video-camera", title: "video"},
 		];
 
 		payload.options = payload.options.concat(formating);
@@ -30,7 +30,7 @@ const VideoExtendedMarkdown = {
 function applyExtendedMarkdown(textContent) {
 	if (textContent.match(videoRegex)) {
 		textContent = textContent.replace(videoRegex, function (match, text) {
-			return `<div class="dplayer-block" media-src="${text}"></div>`;
+			return `<div class="dplayer-block">${text}</div>`;
 		});
 	}
 	return textContent;

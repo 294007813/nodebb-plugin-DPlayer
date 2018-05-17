@@ -7,6 +7,17 @@ $(document).ready(function() {
 
 	$(window).on('action:ajaxify.end', function(ev, data) {
 		$('[data-toggle="tooltip"]').tooltip();
+
+		require(['DPlayer'], function (DPlayer) {
+			$(".dplayer-block").each(function (index,element) {
+				new DPlayer({
+					container: element,
+					video: {
+						url: $(element).children("a").attr("href"),
+					},
+				});
+			})
+		});
 	});
 
 	$(window).on('action:composer.enhanced', function(evt, data) {
@@ -15,26 +26,17 @@ $(document).ready(function() {
 
 
 
-	require(['DPlayer'], function (DPlayer) {
-		$(".dplayer-block").each(function (index,element) {
-			new DPlayer({
-				container: element,
-				video: {
-					url: $(element).attr("media-src"),
-				},
-			});
-		})
-	});
+
 
 	VideoExtendedMarkdown.prepareFormattingTools = function() {
 		require([
 			'composer/formatting',
 			'composer/controls',
-			'translator',
+			// 'translator',
 		], function (formatting, controls, translator) {
 			if (formatting && controls) {
 				// params is (language, namespace, callback)
-				translator.getTranslations(window.config.userLang || window.config.defaultLang, 'videoextendedmarkdown', function(strings) {
+				// translator.getTranslations(function(strings) {
 					formatting.addButtonDispatch('center', function(textarea, selectionStart, selectionEnd) {
 						if (selectionStart === selectionEnd) {
 							controls.insertIntoTextarea(textarea, '!(' + strings.video + ')');
@@ -44,7 +46,7 @@ $(document).ready(function() {
 							controls.updateTextareaSelection(textarea, selectionStart + 2, selectionEnd + 1);
 						}
 					});
-				})
+				// })
 			}
 		})
 	}

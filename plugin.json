@@ -3,7 +3,8 @@
   "url": "https://github.com/294007813/nodebb-plugin-DPlayer",
   "library": "./library.js",
   "css": [
-    "static/DPlayer.min.less"
+    "./static/DPlayer.min.css",
+    "./static/style.css"
   ],
   "hooks": [
     { "hook": "filter:parse.post", "method": "parsePost"},
