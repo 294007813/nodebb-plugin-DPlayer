@@ -1,4 +1,4 @@
-# nodebb-plugin-DPlayer
+# nodebb-plugin-dplayer
 
 ## Installation
 `npm install nodebb-plugin-dplayer`
