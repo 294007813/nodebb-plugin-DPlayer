@@ -32,11 +32,11 @@ $(document).ready(function() {
 		require([
 			'composer/formatting',
 			'composer/controls',
-			// 'translator',
+			'translator',
 		], function (formatting, controls, translator) {
 			if (formatting && controls) {
 				// params is (language, namespace, callback)
-				// translator.getTranslations(function(strings) {
+				translator.getTranslations(window.config.userLang || window.config.defaultLang, 'videoextendedmarkdown', function(strings) {
 					formatting.addButtonDispatch('center', function(textarea, selectionStart, selectionEnd) {
 						if (selectionStart === selectionEnd) {
 							controls.insertIntoTextarea(textarea, '!(' + strings.video + ')');
@@ -46,7 +46,7 @@ $(document).ready(function() {
 							controls.updateTextareaSelection(textarea, selectionStart + 2, selectionEnd + 1);
 						}
 					});
-				// })
+				})
 			}
 		})
 	}

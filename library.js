@@ -18,7 +18,7 @@ const VideoExtendedMarkdown = {
 	},
 	registerFormating(payload, callback) {
 		const formating = [
-			{name: "video", className: "fa fa-video-camera", title: "video"},
+			{name: "video", className: "fa fa-video-camera", title: "[[videoextendedmarkdown:composer.formatting.video]]"},
 		];
 
 		payload.options = payload.options.concat(formating);

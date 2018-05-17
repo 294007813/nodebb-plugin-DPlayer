@@ -16,5 +16,6 @@
   ],
   "modules": {
     "DPlayer.js": "./static/DPlayer.min.js"
-  }
+  },
+  "languages": "languages"
 }
